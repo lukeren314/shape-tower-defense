@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private List<Tower> towers;
+
+    public void DoStart()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DoUpdate()
     {
-        
+        foreach (Tower tower in towers)
+        {
+            tower.DoUpdate();
+        }
     }
 }

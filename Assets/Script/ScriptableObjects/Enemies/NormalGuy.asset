@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 941b4b7f7eaf87246a99650f57c0ee4d, type: 3}
-  m_Name: Path1
+  m_Script: {fileID: 11500000, guid: f1189e2c1066d3f4495a6bbaef0ddbe9, type: 3}
+  m_Name: NormalGuy
   m_EditorClassIdentifier: 
-  points:
-  - {x: 6.37, y: 5}
-  - {x: -5, y: 2}
+  health: 0
+  speed: 0
+  numSides: 0
