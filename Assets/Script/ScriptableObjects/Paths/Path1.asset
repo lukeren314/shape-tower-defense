@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: Path1
   m_EditorClassIdentifier: 
   points:
-  - {x: 6.37, y: 5}
-  - {x: -5, y: 2}
+  - {x: -8, y: 0}
+  - {x: -3, y: 0}
+  - {x: -3, y: 2}
+  - {x: -1, y: 2}
+  - {x: -1, y: -2.74}
+  - {x: 0, y: -3.5}
+  - {x: 1, y: -2.74}
+  - {x: 7.64, y: -2.74}

@@ -26,6 +26,11 @@ public class PathManager : MonoBehaviour
             {
                 Gizmos.DrawLine(pathData.points[i], pathData.points[i+1]);
             }
+            Gizmos.color = Color.black;
+            foreach (Vector2 point in pathData.points)
+            {
+                Gizmos.DrawSphere(point, 0.1f);
+            }
         }
 
     }
