@@ -2,19 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathManager : MonoBehaviour
+public class PathManager : BaseManager
 {
     public PathData pathData;
-
-    public void DoStart()
-    {
-
-    }
-
-    public void DoUpdate()
-    {
-        
-    }
 
     private void OnDrawGizmos()
     {
