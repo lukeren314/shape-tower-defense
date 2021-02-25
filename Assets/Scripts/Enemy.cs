@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour
     // the in-game enemy object
     public EnemyData enemyData;
     public PathData pathData;
-    public SpriteRenderer sprite;
+    public SpriteRenderer spriteRenderer;
+    public EnemyHealthBar healthBar;
     public float currentHealth;
     public bool isDead;
     public bool isFinished;
@@ -21,6 +22,8 @@ public class Enemy : MonoBehaviour
     {
         this.enemyData = enemyData;
         this.pathData = pathData;
+        spriteRenderer.sprite = enemyData.sprite;
+        spriteRenderer.transform.localScale = new Vector3(enemyData.scale, enemyData.scale);
 
         // start at max health
         currentHealth = enemyData.health;
@@ -32,6 +35,8 @@ public class Enemy : MonoBehaviour
         edgeDistance = 0;
         totalDistance = 0;
         isDead = false;
+
+        healthBar.UpdateValue(currentHealth, 1);
     }
 
     public void DoUpdate()
@@ -60,6 +65,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void DoDestroy()
+    {
+        healthBar.DoDestroy();
+        Destroy(gameObject);
+    }
+
     public bool IsDead()
     {
         return isDead;
@@ -76,6 +87,9 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+        } else
+        {
+            healthBar.UpdateValue(currentHealth, currentHealth / enemyData.health);
         }
     }
 
@@ -108,7 +122,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        sprite.enabled = false;
+        spriteRenderer.enabled = false;
         isDead = true;
     }
 }

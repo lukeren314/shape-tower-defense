@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyEvents:
   - enemyWaveType:
-      enemyType: {fileID: 11400000, guid: 2ebe8c45180389c458c539d02a7090b6, type: 2}
+      enemyType: {fileID: 11400000, guid: 31194efa61c89f047ac96f6b6b2b907c, type: 2}
       count: 5
       spacing: 1
     startTime: 1
+  - enemyWaveType:
+      enemyType: {fileID: 11400000, guid: 2ebe8c45180389c458c539d02a7090b6, type: 2}
+      count: 5
+      spacing: 1
+    startTime: 10

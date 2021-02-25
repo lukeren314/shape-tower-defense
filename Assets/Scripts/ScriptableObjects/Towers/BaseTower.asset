@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6088a7611032f7a4d979b06262671907, type: 3}
-  m_Name: TowerData
+  m_Name: BaseTower
   m_EditorClassIdentifier: 
-  attackDamage: 200
-  attackSpeed: 3
-  attackRange: 4
+  attackDamage: 15
+  attackSpeed: 10
+  attackRange: 3.5

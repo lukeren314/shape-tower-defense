@@ -116,6 +116,7 @@ public class EnemyManager : BaseManager
                     DealDamage(enemies[i]);
                 }
                 // either way, get rid of them. For good.
+                enemies[i].DoDestroy();
                 enemies.RemoveAt(i);
             }
         }
@@ -123,7 +124,7 @@ public class EnemyManager : BaseManager
 
     private void DealDamage(Enemy enemy)
     {
-        Destroy(enemy.gameObject);
+        
     }
 
     private void RemoveCompletedEnemeySpawners() 

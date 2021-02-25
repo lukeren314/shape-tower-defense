@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  enemyPrefab: {fileID: 4386245874978257000, guid: 75820de32a078f34f9ee379278bd97f7,
+  enemyPrefab: {fileID: 2242565372201634876, guid: 75820de32a078f34f9ee379278bd97f7,
     type: 3}
   pathData: {fileID: 11400000, guid: 9eca8f8fba30f404e8993ec83b1b2d3b, type: 2}
   roundManager: {fileID: 1599831745}
@@ -375,8 +375,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789739323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -0.36, z: 0}
-  m_LocalScale: {x: 32.4, y: 25, z: 1}
+  m_LocalPosition: {x: 0.005, y: -0.007, z: 0}
+  m_LocalScale: {x: 22.37728, y: 15.653246, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -649,10 +649,10 @@ RectTransform:
   m_Father: {fileID: 1659097555}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 327.54, y: 0}
-  m_SizeDelta: {x: -655.0887, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -100, y: 0}
+  m_SizeDelta: {x: 200, y: 628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737765524
 MonoBehaviour:
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

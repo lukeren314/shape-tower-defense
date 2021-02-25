@@ -27,6 +27,7 @@ public class EnemySpawner
                 break;
             }
             SpawnEnemy();
+            ++currentEnemy;
             ResetSpawnTimer();
         }
         spawnTimer -= Time.deltaTime;
@@ -40,6 +41,7 @@ public class EnemySpawner
     private void SpawnEnemy()
     {
         enemyManager.SpawnEnemy(enemyWave.enemyType);
+
     }
 
     private void ResetSpawnTimer()

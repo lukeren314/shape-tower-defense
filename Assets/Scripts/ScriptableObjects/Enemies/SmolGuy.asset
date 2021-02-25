@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 500
   speed: 10
+  scale: 0.5
   numSides: 4
+  sprite: {fileID: 21300000, guid: 03125265bab301c4b98fdc1bc7e02456, type: 3}
