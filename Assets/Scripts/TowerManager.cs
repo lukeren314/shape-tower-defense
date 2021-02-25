@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerManager : BaseManager
 {
     public EnemyManager enemyManager;
+    public ProjectileManager projectileManager;
     public Tower towerPrefab;
 
     public TowerData testData;
@@ -25,7 +26,7 @@ public class TowerManager : BaseManager
     private void CreateTower(TowerData towerData, Vector2 position)
     {
         Tower tower = Instantiate(towerPrefab, transform);
-        tower.OnCreate(towerData, enemyManager, position);
+        tower.OnCreate(towerData, enemyManager, projectileManager, position);
         towers.Add(tower);
     }
 }

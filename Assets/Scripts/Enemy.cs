@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public EnemyData enemyData;
     public PathData pathData;
     public SpriteRenderer spriteRenderer;
+    public BoxCollider2D boxCollider;
     public EnemyHealthBar healthBar;
     public float currentHealth;
     public bool isDead;
@@ -24,7 +25,7 @@ public class Enemy : MonoBehaviour
         this.pathData = pathData;
         spriteRenderer.sprite = enemyData.sprite;
         spriteRenderer.transform.localScale = new Vector3(enemyData.scale, enemyData.scale);
-
+        boxCollider.size *= enemyData.scale;
         // start at max health
         currentHealth = enemyData.health;
 
@@ -54,7 +55,7 @@ public class Enemy : MonoBehaviour
         // if we've passed the current edge length, move to the next edge
         if (edgeDistance < currentEdgeLength)
         {
-            // figure out a good way to calculate how far they should travel every second
+            // TODO: figure out a good way to calculate how far they should travel every second
             // based on their speed
             float distance = Time.deltaTime * enemyData.speed / 10;
             edgeDistance += distance; //  
@@ -67,7 +68,6 @@ public class Enemy : MonoBehaviour
 
     public void DoDestroy()
     {
-        healthBar.DoDestroy();
         Destroy(gameObject);
     }
 

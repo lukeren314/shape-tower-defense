@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public EnemyManager enemyManager;
     public PathManager pathManager;
     public RoundManager roundManager;
+    public ProjectileManager projectileManager;
+
+    [Range(0.0f, 2.0f)]
     public float gameSpeed = 1;
 
     private void Start()
@@ -16,6 +19,7 @@ public class GameManager : MonoBehaviour
         enemyManager.DoStart();
         pathManager.DoStart();
         roundManager.DoStart();
+        projectileManager.DoStart();
     }
 
     private void Update()
@@ -25,6 +29,7 @@ public class GameManager : MonoBehaviour
         enemyManager.DoUpdate();
         pathManager.DoUpdate();
         roundManager.DoUpdate();
+        projectileManager.DoUpdate();
     }
 
     private void FixedUpdate()
@@ -33,5 +38,6 @@ public class GameManager : MonoBehaviour
         enemyManager.DoFixedUpdate();
         pathManager.DoFixedUpdate();
         roundManager.DoFixedUpdate();
+        projectileManager.DoFixedUpdate();
     }
 }

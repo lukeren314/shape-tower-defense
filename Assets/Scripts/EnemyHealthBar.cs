@@ -14,11 +14,4 @@ public class EnemyHealthBar : MonoBehaviour
         healthBarRenderer.transform.localScale = temp;
         textMesh.text = Mathf.Round(value).ToString();
     }
-
-    public void DoDestroy()
-    {
-        Destroy(healthBarRenderer.gameObject);
-        Destroy(textMesh.gameObject);
-        Destroy(gameObject);
-    }
 }

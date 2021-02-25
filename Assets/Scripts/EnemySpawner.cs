@@ -15,12 +15,12 @@ public class EnemySpawner
     {
         this.enemyWave = enemyWave;
         this.enemyManager = enemyManager;
-        this.currentEnemy = 0;
+        currentEnemy = 0;
     }
 
     public void DoFixedUpdate() 
     {
-        while (spawnTimer <= 0)
+        while (spawnTimer >= enemyWave.spacing)
         {
             if (IsFinished())
             {
@@ -30,7 +30,7 @@ public class EnemySpawner
             ++currentEnemy;
             ResetSpawnTimer();
         }
-        spawnTimer -= Time.deltaTime;
+        spawnTimer += Time.deltaTime;
     }
 
     public bool IsFinished()
@@ -41,11 +41,10 @@ public class EnemySpawner
     private void SpawnEnemy()
     {
         enemyManager.SpawnEnemy(enemyWave.enemyType);
-
     }
 
     private void ResetSpawnTimer()
     {
-        spawnTimer = enemyWave.spacing;
+        spawnTimer = 0;
     }
 }

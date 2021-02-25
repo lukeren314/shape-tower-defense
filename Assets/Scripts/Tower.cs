@@ -11,18 +11,24 @@ public class Tower : MonoBehaviour
     }
     public TowerData towerData;
     public EnemyManager enemyManager;
+    public ProjectileManager projectileManager;
+
+    public ProjectileData baseProjectile;
 
     public TargetType targetType;
     private float attackTimer;
+    private Enemy targettedEnemy;
 
-    public void OnCreate(TowerData towerData, EnemyManager enemyManager, Vector2 position)
+    public void OnCreate(TowerData towerData, EnemyManager enemyManager, ProjectileManager projectileManager, Vector2 position)
     {
         this.towerData = towerData;
         this.enemyManager = enemyManager;
+        this.projectileManager = projectileManager;
         
         transform.position = position;
         ResetAttackTimer();
         targetType = TargetType.FIRST;
+        targettedEnemy = null;
     }
 
     public void DoFixedUpdate()
@@ -46,8 +52,9 @@ public class Tower : MonoBehaviour
         List<Enemy> enemiesInRange = GetEnemiesInRange();
         if (enemiesInRange.Count > 0)
         {
-            Enemy targettedEnemy = PickTarget(enemiesInRange);
-            AttackTarget(targettedEnemy);
+            Enemy targetEnemy = PickTarget(enemiesInRange);
+            targettedEnemy = targetEnemy;
+            AttackTarget(targetEnemy);
         }
     }
 
@@ -111,11 +118,21 @@ public class Tower : MonoBehaviour
 
     private void AttackTarget(Enemy enemy)
     {
-        enemy.TakeDamage(towerData.attackDamage);
+        // enemy.TakeDamage(towerData.attackDamage);
+        projectileManager.SpawnProjectile(baseProjectile, this, enemy);
     }
 
     private void ResetAttackTimer()
     {
         attackTimer = 1 / towerData.attackSpeed;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, 1);
+        if (targettedEnemy != null)
+        {
+            Gizmos.DrawWireSphere(targettedEnemy.transform.position, 1);
+        }
     }
 }

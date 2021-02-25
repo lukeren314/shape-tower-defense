@@ -40,13 +40,13 @@ public class EnemyManager : BaseManager
     public override void DoFixedUpdate()
     {
         // fixed update all our enemies
-        foreach (Enemy enemy in enemies) 
+        foreach (Enemy enemy in enemies)
         {
             enemy.DoFixedUpdate();
         }
 
         // fixed update our spawners
-        foreach(EnemySpawner enemySpawner in enemySpawners) 
+        foreach (EnemySpawner enemySpawner in enemySpawners)
         {
             enemySpawner.DoFixedUpdate();
         }
@@ -60,7 +60,7 @@ public class EnemyManager : BaseManager
         {
             EndRound();
         }
-        
+
         // increase our timer if the round timer isn't over
         if (!roundOver)
         {
@@ -68,11 +68,16 @@ public class EnemyManager : BaseManager
         }
 
         // start any enemy events that need to be started
-        while (currentEnemyEvent < currentRound.enemyEvents.Count && eventTimer >= currentRound.enemyEvents[currentEnemyEvent].startTime)
+        while (currentEnemyEvent < currentRound.enemyEvents.Count && eventTimer >= GetCurrentEnemyEvent().startTime)
         {
-            StartEnemyEvent(currentRound.enemyEvents[currentEnemyEvent]);
+            StartEnemyEvent(GetCurrentEnemyEvent());
             ++currentEnemyEvent;
         }
+    }
+
+    private EnemyEvent GetCurrentEnemyEvent()
+    {
+        return currentRound.enemyEvents[currentEnemyEvent];
     }
 
     public void SpawnEnemy(EnemyData enemyData) 
